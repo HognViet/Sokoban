@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Thua
+  - Win
+  - Dich
+  - Box
   layers:
   - Default
   - TransparentFX
