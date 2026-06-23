@@ -12,29 +12,27 @@ public class EndGame : MonoBehaviour
         thua.SetActive(false);
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if( box == 3)
+        if ( box == 3)
         {
             win.SetActive(true);
+            //Debug.Log(box);
+            Time.timeScale = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Chạm: " + collision.gameObject.name);
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("✅ Player chạm Dích!");
-        }
         if (collision.gameObject.CompareTag("Box"))
         {
             box++;
             Debug.Log("+1 Box, Total: " + box);
         }
+        
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Box"))
         {
@@ -42,4 +40,5 @@ public class EndGame : MonoBehaviour
             Debug.Log("-1 Box, Total: " + box);
         }
     }
+
 }
